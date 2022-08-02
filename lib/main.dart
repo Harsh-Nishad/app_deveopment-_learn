@@ -1,3 +1,4 @@
+import 'package:first_app/homepage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,14 +11,7 @@ class harsh_first_app extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Material(
-        color: Colors.red,
-        child: Center(
-          child: Container(
-            child: Text("Hello harsh nishad"),
-          ),
-        ),
-      ),
+      home: homepage(),
     );
   }
 }
