@@ -14,8 +14,7 @@ class homepage extends StatelessWidget {
       appBar: AppBar(title: Text("Main page")),
       body: Center(
         child: Container(
-          child: Text(
-              "Hello harsh nishad $variable is left to complete this course"),
+          child: Text("Hello harsh nishad $variable is left to complete this course"),
         ),
       ),
       drawer: Drawer(),
