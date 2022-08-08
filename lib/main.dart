@@ -1,6 +1,7 @@
 import 'package:first_app/pages/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app/pages/login.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(harsh_first_app());
@@ -14,8 +15,11 @@ class harsh_first_app extends StatelessWidget {
     return MaterialApp(
       themeMode: ThemeMode.dark,
       darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        primarySwatch: Colors.yellow,
+        brightness: Brightness.light,
+        primarySwatch: Colors.purple,
+      ),
+      theme: ThemeData(
+        fontFamily: GoogleFonts.lato().fontFamily,
       ),
       routes: {
         "/": (context) => login(),
