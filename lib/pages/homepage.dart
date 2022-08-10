@@ -1,7 +1,12 @@
+import 'package:first_app/models/catalog.dart';
+import 'package:first_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:first_app/utils/Routes.dart';
+import 'package:first_app/widgets/drawer.dart';
+import 'package:first_app/widgets/item_widget.dart';
 
 class homepage extends StatelessWidget {
-  const homepage({Key? key}) : super(key: key);
+  //final dummylist = List.generate(20, (index) => catalogmodel.items[0]);
 
   @override
 
@@ -11,13 +16,16 @@ class homepage extends StatelessWidget {
     int variable = 30;
     return Scaffold(
       // body: Colors.red,
-      appBar: AppBar(title: Text("Main page")),
-      body: Center(
-        child: Container(
-          child: Text("Hello harsh nishad $variable is left to complete this course"),
-        ),
-      ),
-      drawer: Drawer(),
+      appBar: AppBar(title: Text("Catalog App")),
+      body: ListView.builder(
+          itemCount: catalogmodel.items.length,
+          //itemCount: dummylist.length,
+          itemBuilder: ((context, index) {
+            return itemwidget(
+              item: catalogmodel.items[index],
+            );
+          })),
+      drawer: Mydrawer(),
     );
   }
 }
