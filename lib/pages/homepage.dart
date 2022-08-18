@@ -2,7 +2,7 @@ import 'package:first_app/models/catalog.dart';
 import 'package:first_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app/utils/Routes.dart';
-import 'package:first_app/widgets/drawer.dart';
+
 import 'package:first_app/widgets/item_widget.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
@@ -24,7 +24,12 @@ class _homepageState extends State<homepage> {
   loaddata() async {
     final catalogJson = await rootBundle.loadString('assets/data/catalog.json');
     final decodeddata = json.decode(catalogJson);
+
     var productsdata = decodeddata['products'];
+
+    catalogmodel.items =
+        List.from(productsdata).map((item) => Item.frommap(item)).toList();
+    setState(() {});
   }
 
   //using the scaffold to create a page to feel the user interface
